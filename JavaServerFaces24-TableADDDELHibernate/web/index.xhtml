@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{b.schools}" var="v" style="border: 1px; border-color: blue">
+                <h:column>
+                    <f:facet name="header">School Name</f:facet>
+                        #{v.name}
+               
+                    <h:outputText value="#{v.name}" rendered="#{not v.update}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">School Info</f:facet>
+                        #{v.info}
+                 
+                    <h:outputText value="#{v.info}" rendered="#{not v.update}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">City</f:facet>
+                        #{v.city}
+                    <h:inputText value="#{v.city}" size="10" rendered="#{v.update}"/>
+                    <h:outputText value="#{v.city}" rendered="#{not v.update}"/>
+                </h:column>
+                <h:column >
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton value="Delete" action="#{b.deleteSchools(v.id)}"/>
+                </h:column>
+                <h:column >
+                    <f:facet name="header">Update</f:facet>
+                      
+                    <h:commandButton value="Save" action="#{b.saveRecord()}" rendered="#{e.update}"/>
+                </h:column>
+            </h:dataTable>
+
+        </h:form>
+        <h:form>
+            <h:panelGrid columns="2">
+                Name:<h:inputText value="#{b.name}"/>
+                Info:<h:inputText value="#{b.info}"/>
+                City:<h:inputText value="#{b.city}"/>
+                <h:commandButton value="Add" action="#{b.addSchools()}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
