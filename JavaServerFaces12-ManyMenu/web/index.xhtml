@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Index</title>
+    </h:head>
+    <h:body>
+        <h:form>
+
+            1-By hardcoding
+            <h:selectManyMenu value="#{b.lang1}" style="height: 50px;">
+                <f:selectItem itemValue="JSF-JSP" itemLabel="Java Web"/>
+                <f:selectItem itemValue="Android" itemLabel="Java Mobile"/>
+                <f:selectItem itemValue="Oracle" itemLabel="Java Database"/>
+            </h:selectManyMenu>
+            <br/><br/>
+            2-By array
+            <h:selectManyMenu value="#{b.lang2}" style="height: 50px;">
+                <f:selectItems value="#{b.lang2Valu}" />   
+            </h:selectManyMenu>
+            <br/><br/>
+            3-By map
+            <h:selectManyMenu value="#{b.lang3}" style="height: 50px;">
+                <f:selectItems value="#{b.lang3Valu}"/>
+            </h:selectManyMenu>
+            <h:commandButton value="Reset" type="reset"/>
+            <h:commandButton value="Submit" action="result.xhtml"/>
+        </h:form>
+    </h:body>
+</html>
+

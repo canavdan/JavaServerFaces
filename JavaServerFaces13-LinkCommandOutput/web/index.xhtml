@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Index</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <ol>
+                <li><h:link value="Go with link" outcome="page2.xhtml"/></li>
+                <li><h:link value="Go with link and sent parameters " outcome="page2.xhtml">
+                        <f:param name="p1" value="Parameter1"/>
+                        <f:param name="p2" value="Parameter2"/>
+                    </h:link>
+                </li>
+                        <li><h:link outcome="page2.xhtml">
+                                <h:graphicImage style="width:50px; height:50px;" library="images" name="enter.jpg"/>
+                    </h:link></li>
+            </ol>
+            <hr/><hr/>
+             <ol>
+                 <li><h:commandLink value="Go with commandlink" action="#{b.goPage2()}"/></li>
+                <li><h:commandLink value="Go with commandlink and sent parameters" action="#{b.goPage2()}">
+                        <f:param name="p1" value="Parameter1"/>
+                        <f:param name="p2" value="Parameter2"/>
+                    </h:commandLink>
+                </li>
+                        <li><h:commandLink action="#{b.goPage2()}">
+                                <h:graphicImage style="width:50px; height:50px;" library="images" name="enter.jpg"/>
+                    </h:commandLink></li>
+            </ol>
+             <hr/><hr/>
+             <ol>
+                 <li><h:outputLink value="page2.xhtml">Go with outputlink</h:outputLink></li>
+                <li><h:outputLink value="page2.xhtml">
+                        <h:outputText value="Go with outputlink and sent parameters "/>
+                        <f:param name="p1" value="Parameter1"/>
+                        <f:param name="p2" value="Parameter2"/>
+                    </h:outputLink>
+                </li>
+                        <li><h:outputLink value="page2.xhtml">
+                                <h:graphicImage style="width:50px; height:50px;" library="images" name="enter.jpg"/>
+                    </h:outputLink></li>
+            </ol>
+            
+            
+        </h:form>
+    </h:body>
+</html>
+
