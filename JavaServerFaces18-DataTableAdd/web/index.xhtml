@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Index</title>
+    </h:head>
+    <h:body>
+        <h:form>
+        <h:dataTable  style="border-collapse:collapse; border:2px;"
+                      value="#{b.employeer}" var="e">
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{e.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">SurName</f:facet>
+                #{e.surname}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Number</f:facet>
+                #{e.number}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Age</f:facet>
+                #{e.age}
+            </h:column>
+            <h:column>               
+                <f:facet name="header">Wages</f:facet>
+                #{e.wages}
+            </h:column>
+             <h:column>               
+                <f:facet name="header">Sil</f:facet>
+                <h:commandButton value="Sil" action="#{b.deleteRecord(e)}"/>
+            </h:column>
+            
+        </h:dataTable>
+            </h:form>
+        <br></br><br/>
+        <hr/><hr/>
+        <h:form>
+            <h2>Register Employeer</h2>
+            <table title="Register Employeer">
+                <tr>
+                    <td>Name</td>
+                    <td><h:inputText value="#{b.name}"/></td>
+                </tr>
+                  <tr>
+                    <td>SurName</td>
+                    <td><h:inputText value="#{b.surname}"/></td>
+                </tr>
+                  <tr>
+                    <td>Age</td>
+                    <td><h:inputText value="#{b.age}"/></td>
+                </tr>
+                  <tr>
+                    <td>Number</td>
+                    <td><h:inputText value="#{b.number}"/></td>
+                </tr>
+                 <tr>
+                    <td>Wages</td>
+                    <td><h:inputText value="#{b.wages}"/></td>
+                </tr>
+            </table>   
+            <h:commandButton value="Ekle" action="#{b.addRecord()}"/>
+        </h:form>
+    </h:body>
+</html>
+

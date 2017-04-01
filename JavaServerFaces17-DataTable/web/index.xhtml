@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Index</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div><h2>JSF DATATABLE EXAMPLE</h2></div>
+        <!--   <h:outputStylesheet library="css" name="table-style.css"/>     -->  
+            <h:dataTable value="#{b.employeer}" var="e" 
+                         style="border-collapse:collapse; border:2px; background-color:blue;"
+                         styleClass="order-table"
+                         headerClass="order-table-header"
+                         rowClasses="order-table-odd-row">
+                <h:column>
+                    <f:facet name="header">Number</f:facet>
+                        #{e.number}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                        #{e.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Surname</f:facet>
+                        #{e.surname}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Age</f:facet>
+                        #{e.age}
+                </h:column>
+                <h:column>
+                    <h:graphicImage style="width: 25px; height: 25px;" library="images" name="can.jpg"/>
+                    <f:facet name="header">Wages</f:facet>
+                        #{e.wages}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

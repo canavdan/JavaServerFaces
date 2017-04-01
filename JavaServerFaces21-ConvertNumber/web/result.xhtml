@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Result</title>
+    </h:head>
+    <h:body>
+        <h:outputText value="#{b.number}">
+            <f:convertNumber minFractionDigits="1"/>
+        </h:outputText>
+        <br/>
+        <h:outputText value="#{b.number}">
+            <f:convertNumber minFractionDigits="5"/>
+        </h:outputText>
+         <br/><br/>
+         <h:outputText value="#{b.number}">
+             <f:convertNumber pattern="#0.0"/>
+        </h:outputText>
+         <br/>
+          <h:outputText value="#{b.number}">
+             <f:convertNumber pattern="#0.0000"/>
+        </h:outputText>
+         <br/> <br/>
+         <h:outputText value="#{b.number}">
+             <f:convertNumber currencyCode="TRL" type="currency"/>
+        </h:outputText>
+         <br/>
+           <h:outputText value="#{b.number}">
+               <f:convertNumber currencyCode="USD" type="currency"/>
+        </h:outputText>
+         <br/> <br/>
+         
+         <h:outputText value="#{b.number}">
+             <f:convertNumber type="percent"/>
+        </h:outputText>
+         <br/> <br/>
+         
+    </h:body>
+</html>
+
