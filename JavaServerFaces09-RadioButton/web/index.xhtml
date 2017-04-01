@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Index</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            1-Hard Code
+            <h:selectOneRadio value="#{b.favColor1}">
+                <f:selectItem itemValue="Color1-Red" itemLabel="Red"/>
+                <f:selectItem itemValue="Color1-Blue" itemLabel="Blue"/>
+                <f:selectItem itemValue="Color1-Green" itemLabel="Green"/>
+            </h:selectOneRadio>
+            <br/><br/>
+            
+            2-With Array
+            <h:selectOneRadio value="#{b.favColor3}">
+                <f:selectItems value="#{b.favColor3Value}"/>
+            </h:selectOneRadio>
+            <br/><br/>
+            
+            3-With Map
+            <h:selectOneRadio value="#{b.favColor2}">
+                <f:selectItems value="#{b.favColor2Value}"/>                             
+            <br/><br/>
+            </h:selectOneRadio>
+            <h:commandButton value="Reset" type="reset"/>
+            <h:commandButton value="Submit" action="result.xhtml"/>
+        </h:form>
+    </h:body>
+</html>
+

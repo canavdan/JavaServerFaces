@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Index</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputText value="Fiyat"/>
+            <h:inputText value="#{a.money}"/>
+            <h:commandButton value="Open payment" action="#{a.openPayment()}"/>          
+        </h:form>
+        <h:form>
+            <h:commandButton value="Open siparis" action="#{a.openOrder()}"/>
+        </h:form>
+        <h:form><h:commandButton value="Open products" action="#{a.openProducts()}"/></h:form>
+        <h:form><h:commandButton value="Open register" action="#{a.openRegister()}"/></h:form>
+    </h:body>
+</html>
+
